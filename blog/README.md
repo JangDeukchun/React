@@ -1,70 +1,49 @@
-# Getting Started with Create React App
+미니 블로그 기획하기
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+필요한 기능
+- 글목록 보기(리스트형태)
+- 글 보기 기능
+- 댓글 보기 기능
+- 글 작성 기능
+- 댓글 작성 기능
 
-## Available Scripts
+글 작성 화면    <-클릭      메인화면       클릭->        글 보기 화면 
+제목입력                        글 작성 버튼             글 제목   
+내용 입력                       글 작성 버튼              글 내용
+내용 입력                       글                        댓글
+                                                          댓글 내용 입력
+글작성 완료 버튼                                            댓글 작성 완료 버튼
 
-In the project directory, you can run:
 
-### `npm start`
+npx create-react-app mini-blog
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+필요한 패키지
+react-router-dom(v6): 리액트 앱에서 페이지 전환을 위해 사용
+styled=components(v5): 스타일링을 위한 컴포넌트
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+npm install --save react-router-dom styled-components
 
-### `npm test`
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
 
-### `npm run build`
+주요 컴포넌트 구성하기
+- 글 목록 보기 기능: PostList 컴포넌트 PostListItem 컴포넌트
+- 글 보기 기능: Post 컴포넌트
+- 댓글 목록 보여주기: CommentList 컴포넌트, CommentListItem 컴포넌트
+- 댓글 작성하기: CommentWrite 컴포넌트
+- 글 작성 기능: PostWrite 컴포넌트
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+폴더 구성하기
+src
+- component
+	- list: 리스트와 관련된 컴포넌트를 모아놓은 폴더, - page: 페이지 컴포넌트들을 모아놓은 폴더, - ui: UI컴포넌트들을 모아놓은 폴더
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+프로젝트 설계할 때에는 top-down  방식으로 큰 그림을 먼저 그리고 그리고 작은 부분을 구체화 시켜 나간다
+프로젝트를 구현할 때에는 반대로 bottom-up 방식으로 작은 부분부터 구현한 후에 작은 부분들을 모아 큰 부분을 완성하게합니다.
 
-### `npm run eject`
+UI 컴포넌트
+- Button 컴포넌트
+- TextInput 컴포넌트
 
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
 
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+남들 30분이면 만드는걸 난 3시간 걸리네 ..
